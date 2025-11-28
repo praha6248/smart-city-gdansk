@@ -1,29 +1,29 @@
 body{
-    background-color: lightblue;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 #main_menu {
-    position:absolute;
+    position:fixed;
     top:24px;
-    left:24px;
+    right:24px;
     background-color:white;
-    width: 492px;
+    width: 432px;
     height: calc(100% - 48px);
-    border-radius: 8px;
+    border-radius: 16px;
     box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2);
+    z-index: 2;
 }
 
 #search_container {
-    padding: 16px;
+    padding: 24px;
     display:flex;
     background-color: white;
-    border-radius: 8px;
+    border-radius: 16px;
     box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2);
-    position: absolute;
+    position: fixed;
     top: 24px;
-    left: 537px;
+    right: 480px;
     width:497px;
+    z-index: 2;
 }
 
 #search {
@@ -40,9 +40,9 @@ body{
 }
 
 #add {
-    position: absolute;
+    position: fixed;
     bottom:24px;
-    right:24px;
+    left:24px;
     border-radius: 100%;
     width: 72px;
     height:72px;
@@ -50,6 +50,8 @@ body{
     box-shadow: 4px 4px 8px rgb(0, 0, 0, 0.2);
     text-align: center;
     align-content: center;
+    z-index: 2;
+    cursor:pointer;
 }
 
 #plus {
@@ -57,20 +59,80 @@ body{
     height:18px;
 }
 
-#nav_bar{
-    display:flex;
+#map{
+    z-index: -1;
 }
 
-.nav_now{
-    padding:24px;
-    padding-bottom: 12px;
-    font-size: 24px;
-    color: #FB6F92;
+nav{
+    margin: 24px;
+    font-size: 16px;
+    margin-bottom:15px;
 }
 
-.nav{
-    font-size: 24px;
+nav a{
     padding:24px;
-    padding-bottom: 12px;
+    cursor:pointer;
     color: #7C7C7C;
+    text-decoration: none;
+}
+
+nav a.active{
+    color: #FB6F92;
+    border-bottom: 6px solid #FB6F92;
+}
+
+.line{
+    stroke-width: 1;
+    stroke: #e1e1e1;
+}
+
+.custom_disp{
+    display: inline-flex;
+    margin: 24px;
+    margin-bottom:0px;
+
+}
+
+.all_filters{
+    background-color: black;
+    color:white;
+    font-size:12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    margin-right:16px;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+.all_filters_selected{
+    background-color: #FFE5EC;
+    color:#FB6F92;
+    font-size:12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    margin-right:16px;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#arrow{
+    height: 12px;
+    width:12px;
+    margin-left: 4px;
+}
+#ikonka{
+    margin-right: 4px;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
