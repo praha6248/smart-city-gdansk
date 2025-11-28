@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +11,8 @@
 </head>
 <body> 
     <div id="map">
+        <script src="mapa.js"></script>
+    </div>
         <div id="main_menu">
             <nav>
                 <a href="wydarzenia.html" class="active">
@@ -21,6 +25,36 @@
                     Sugestie
                 </a>
             </nav>
+            <svg class="line" width="100%" height="1px">
+				<rect width="100%" height="1px"" />
+			</svg>
+            <div class="custom_disp">
+                <div class="all_filters">
+                    <img id="ikonka" src="filtr.svg" alt="filtr">
+                    Filtry
+                    <img id="arrow" src="arrow.svg" alt="arrow">
+                </div>
+                <div class="all_filters">
+                    <img id="ikonka" src="kalendarz.svg" alt="kalendarz">
+                    Data
+                    <img id="arrow" src="arrow.svg" alt="arrow">
+                </div>
+                <div class="all_filters">
+                    <img id="ikonka" src="lokalizacja.svg" alt="lokalizacja">
+                    Lokalizacja
+                    <img id="arrow" src="arrow.svg" alt="arrow">
+                </div>
+            </div>
+            <div class="custom_disp">
+                <div class="all_filters_selected">
+                    Wydarzenie kulturalne
+                    <img id="arrow" src="cross.svg" alt="cross">
+                </div>
+            </div>
+            <svg class="line" width="100%" height="1px">
+				<rect width="100%" height="1px"" />
+			</svg>
+
         </div>
         <div id="search_container">
             <img id="lupa" src="lupa.svg" alt="lupa"/>
@@ -31,6 +65,5 @@
         <div id="add">
             <img id="plus" src="plus.svg" alt="plus"/>
         </div>
-    </div>
 </body>
 </html>
