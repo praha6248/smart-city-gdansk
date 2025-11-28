@@ -10,13 +10,29 @@
 <body> 
     <div id="map">
         <div id="main_menu">
-            
+            <div id="nav_bar">
+                <div class="nav_now">
+                    Wydarzenia
+                </div>
+                <div class="nav">
+                    Zdarzenia
+                </div>
+                <div class="nav">
+                    Sugestie
+                </div>
+            </div>
+            <svg width="100%" height="0.5vh">
+				<rect class="line" width="100%" height="0.1vh"/>
+			</svg>
         </div>
         <div id="search_container">
-            <img src="lupa.svg" alt="lupa"/>
+            <img id="lupa" src="lupa.svg" alt="lupa"/>
             <form action="/action_page.php">
-            <input type="text" placeholder="Search" name="search">
+            <input id="search" type="text" placeholder="Search" name="search">
         </form>
+        </div>
+        <div id="add">
+            <img id="plus" src="plus.svg" alt="plus"/>
         </div>
     </div>
 </body>
