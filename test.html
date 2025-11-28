@@ -28,6 +28,51 @@
         L.tileLayer('https://api.maptiler.com/maps/streets-v4/{z}/{x}/{y}.png?key=17PfRx5orX5Coeuq1LPW', {
             attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
         }).addTo(map);
+        
+        var geojsonLayer;
+
+        fetch('Dzielnice.geojson')
+            .then(response => response.json())
+            .then(data => {
+
+                function dzielnice(feature) {
+                    return {
+                            color: "#fb6f92",
+                            weight: 2,
+                            fillColor: "#fb6f92",
+                            fillOpacity: 0.1,
+                        };
+                }
+
+                geojsonLayer = L.geoJSON(data, {
+                    style: dzielnice,
+
+                    onEachFeature: function(feature, layer) {
+
+                        layer.on({
+
+                            mouseover: function(e) {
+                                var layer = e.target;
+
+                                layer.setStyle({
+                                    color: "#fb6f92",
+                                    weight: 2,
+                                    fillColor: "#fb6f92",
+                                    fillOpacity: 0.5,
+                                });
+                            },
+
+                            mouseout: function(e) {
+                                geojsonLayer.resetStyle(e.target);
+                            },
+                        })
+                        if (feature.properties && feature.properties.NAZWA) {
+                            layer.bindPopup("Dzielnica: <b>" + feature.properties.NAZWA + "</b>")
+                        }
+                    }
+                })
+                .addTo(map);
+            });
     </script>
 </body>
 </html>
