@@ -30,12 +30,9 @@
         }).addTo(map);
         
         var geojsonLayer;
+        var DaneDzielnic = {};
 
-        fetch('Dzielnice.geojson')
-            .then(response => response.json())
-            .then(data => {
-
-                function dzielnice(feature) {
+        function dzielnice(feature) {
                     return {
                             color: "#fb6f92",
                             weight: 2,
@@ -43,14 +40,48 @@
                             fillOpacity: 0.1,
                         };
                 }
+        
+        fetch('ludnosc.json')
+            .then(response => response.json())
+            .then(statsData => {
+                statsData.forEach(dzielnica => {
+                    const nazwa = dzielnica.NAZWA;
 
+                    if (nazwa) {
+                        DaneDzielnic[nazwa] = {
+                            populacja: dzielnica["liczba  ludności 2024 r."],
+                            powierzchnia: dzielnica["pow. w km2 2024 r."],
+                            kobiety: dzielnica["liczba kobiet"],
+                            mezczyzni: dzielnica["liczba mężczyzn"],
+                        };
+                    }
+                });
+
+                return fetch('Dzielnice.geojson');
+            })
+            .then(response => response.json())
+            .then(data => {
                 geojsonLayer = L.geoJSON(data, {
                     style: dzielnice,
 
                     onEachFeature: function(feature, layer) {
 
-                        layer.on({
+                        var nazwa = feature.properties.NAZWA;
+                        var statystyki = DaneDzielnic[nazwa];
 
+                        var trescPopup = "Dzielnica: <b>" + nazwa + "</b>";
+
+                        if (statystyki) {
+                            trescPopup += "<br>Liczba  ludności (2024): " + statystyki.populacja + " osób";
+                            trescPopup += "<br>W tym: "
+                            trescPopup += "<br>" + statystyki.kobiety + " kobiet,";
+                            trescPopup += "<br>" + statystyki.mezczyzni + " mężczyzn";
+                            trescPopup += "<br>Powierzchnia (2024): " + statystyki.powierzchnia + " km2";
+                        }
+
+                        layer.bindPopup(trescPopup);
+
+                        layer.on({
                             mouseover: function(e) {
                                 var layer = e.target;
 
@@ -60,19 +91,17 @@
                                     fillColor: "#fb6f92",
                                     fillOpacity: 0.5,
                                 });
+                                layer.bringToFront();
                             },
 
                             mouseout: function(e) {
                                 geojsonLayer.resetStyle(e.target);
                             },
-                        })
-                        if (feature.properties && feature.properties.NAZWA) {
-                            layer.bindPopup("Dzielnica: <b>" + feature.properties.NAZWA + "</b>")
-                        }
+                        });
                     }
                 })
-                .addTo(map);
-            });
+                .addTo(map)
+            })
     </script>
 </body>
 </html>
