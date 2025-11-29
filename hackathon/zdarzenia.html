@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City</title>
+</head>
+<body> 
+    <div id="map">
+        <script src="map.js"></script>
+    </div>
+        <div id="main_menu">
+            <nav>
+                <a href="demografia.html">
+                    Demografia
+                </a>
+                <a href="wydarzenia.html">
+                    Wydarzenia
+                </a>
+                <a href="zdarzenia.html"  class="active">
+                    Zdarzenia
+                </a>
+            </nav>
+            <svg class="line" width="100%" height="1px">
+				<rect width="100%" height="1px"" />
+			</svg>
+            <div class="custom_disp">
+                <div id="filtry" class="all_filters">
+                    <img id="ikonka" src="filtr.svg" alt="filtr">
+                    Filtry
+                    <img id="arrow" src="arrow.svg" alt="arrow">
+                </div>
+                <div class="all_filters">
+                    <img id="ikonka" src="kalendarz.svg" alt="kalendarz">
+                    Data
+                    <img id="arrow" src="arrow.svg" alt="arrow">
+                </div>
+                <div class="all_filters">
+                    <img id="ikonka" src="lokalizacja.svg" alt="lokalizacja">
+                    Lokalizacja
+                    <img id="arrow" src="arrow.svg" alt="arrow">
+                </div>
+            </div>
+            <svg class="line" width="100%" height="1px">
+				<rect width="100%" height="1px"" />
+			</svg>
+            <div id="przykladowe_zdarzenie">
+                <div class="circle">
+                        <img class="imgcircle" src="alkohol.svg" alt="alkohol"/>
+                </div>
+                <div class="info">
+                <div class="tytul_zdarzenia">Spożywanie alkoholu w miejscu publicznym</div>
+                <div class="data_zgloszenia">9 lipiec 14:57</div>
+                <div class="lokalizacja"><img class="lokalizacja2" src="lokalizacja2.svg" alt="lokalizacja"/>&nbsp;Aniołki</div>
+                </div>
+            </div>
+            <svg class="line" width="100%" height="1px">
+				<rect width="100%" height="1px"" />
+			</svg>
+        </div>
+        <div id="add">
+            <img id="plus" src="plus.svg" alt="plus"/>
+        </div>
+        <div id="dodaj_zdarzenie">
+            <div id="custom_disp_2">
+            Wybierz kategorię
+            </div>
+            <div id="custom_disp_3">
+                <div id="zdarzenie_nav2" class="nav2_active">
+                    Zdarzenie
+                </div>
+                <div id="wydarzenie_nav2" class="nav2">
+                    Wydarzenie
+                </div>
+            </div>
+        </br>
+            <div id="blok1">
+            <div class="cust_disp_4">
+                <div id="wypadki" class="typ">
+                    <div class="circle">
+                        <img class="imgcircle" src="wypadek.svg" alt="wypadek"/>
+                    </div>
+                    Wypadki
+                </div>
+                <div id="dziki" class="typ">
+                    <div class="circle">
+                        <img class="imgcircle" src="dzik.svg" alt="dziki"/>
+                    </div>
+                    Dziki
+                </div>
+                <div id="wandalizm" class="typ">
+                    <div class="circle">
+                        <img class="imgcircle" src="wandalizm.svg" alt="wandalizm"/>
+                    </div>
+                    Wandalizm
+                </div>
+                <div id="parkowanie" class="typ">
+                    <div class="circle">
+                        <img class="imgcircle" src="parkowanie.svg" alt="park"/>
+                    </div>
+                    Nieprawidłowe </br> parkowanie
+                </div>
+            </div>
+            
+        </br>
+            <div class="cust_disp_4">
+                <div id="drogowa" class="typ">
+                    <div class="circle">
+                        <img class="imgcircle" src="droga.svg" alt="droga"/>
+                    </div>
+                    Niewłaściwa </br> struktura </br> drogowa
+                </div>
+                <div id="alkohol" class="typ"><div class="circle">
+                        <img class="imgcircle" src="alkohol.svg" alt="alkohol"/>
+                    </div>
+                    Spożywanie </br> alkoholu </br> w miejscach </br> publicznych
+                </div>
+                <div id="niebiezpieczeństwo" class="typ">
+                    <div class="circle">
+                        <img class="imgcircle" src="niebezpieczenstwo.svg" alt="nieb"/>
+                    </div>
+                    Potencjalne</br> niebiezpieczeństwo
+                </div>
+                <div id="inne" class="typ">
+                    <div class="circle">
+                        <img class="imgcircle" src="inne.svg" alt="inne"/>
+                    </div>
+                    Inne
+                </div>
+            </div>
+            </div>
+            <div id="blok2">
+
+            </div>
+            <div id="zamkniecie_add_event">
+            <img id="krzyzyk" src="krzyzyk_duzy.svg" alt="krzyzk"/>
+            </div>
+        </div>
+        <script src="script.js"></script>
+</body>
+</html>

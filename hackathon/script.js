@@ -19,7 +19,7 @@ add_hide.addEventListener("click", add_event_hide);
 function change_nav2(){
     const nav2_wydarzenie=document.getElementById("wydarzenie_nav2");
     const nav2_zdarzenie=document.getElementById("zdarzenie_nav2");
-    const kloc=document.getElementById("blok");
+    const kloc=document.getElementById("blok1");
     if (nav2_wydarzenie.className=="nav2") {
         nav2_wydarzenie.classList.add("nav2_active");
         nav2_wydarzenie.classList.remove("nav2");
@@ -45,6 +45,18 @@ function filtr_rozwin(){
 
 }
 
+function zamknij_filtr(){
+    const pokaz= document.getElementById("to_hide");
+    const schowaj= document.getElementById("to_show_filtr");
+    pokaz.style.display="block";
+    schowaj.style.display="none";
+}
+
+function punkt_mapa(){
+    add_event_hide();
+
+}
+
 const change_nav2_click_wydarzenie =
 document.getElementById("wydarzenie_nav2");
 change_nav2_click_wydarzenie.addEventListener("click", change_nav2);
@@ -56,3 +68,11 @@ change_nav2_click_zdarzenie.addEventListener("click", change_nav2);
 const filtry =
 document.getElementById("filtry");
 filtry.addEventListener("click", filtr_rozwin);
+
+const dziki =
+document.getElementById("dziki");
+dziki.addEventListener("click", punkt_mapa);
+
+const zamknij_krzyzyk_filtr=
+document.getElementById("filtr_zamknij");
+zamknij_krzyzyk_filtr.addEventListener("click", zamknij_filtr())
