@@ -14,22 +14,31 @@
         <script src="map.js"></script>
     </div>
         <div id="main_menu">
+            <div id="to_show_filtr">
+                <div id="up_filtr">
+                <img id="krzyzyk_filtr" src="krzyzyk_duzy.svg" alt="krzyz"/>
+                Filtry
+                <div id="wyczysc_filtry"> Wyczyść filtry</div>
+                </div>
+            </div>
+            <div id="to_hide">
             <nav>
-                <a href="wydarzenia.html">
+                <a href="demografia.html">
+                    Demografia
+                </a>
+                <a href="wydarzenia.html" class="active">
                     Wydarzenia
                 </a>
-                <a href="zdarzenia.html"  class="active">
+                <a href="zdarzenia.html">
                     Zdarzenia
                 </a>
-                <a href="sugestie.html">
-                    Sugestie
-                </a>
+                
             </nav>
             <svg class="line" width="100%" height="1px">
 				<rect width="100%" height="1px"" />
 			</svg>
             <div class="custom_disp">
-                <div class="all_filters">
+                <div id="filtry" class="all_filters">
                     <img id="ikonka" src="filtr.svg" alt="filtr">
                     Filtry
                     <img id="arrow" src="arrow.svg" alt="arrow">
@@ -54,13 +63,7 @@
             <svg class="line" width="100%" height="1px">
 				<rect width="100%" height="1px"" />
 			</svg>
-
         </div>
-        <div id="search_container">
-            <img id="lupa" src="lupa.svg" alt="lupa"/>
-            <form action="/action_page.php">
-            <input id="search" type="text" placeholder="Search" name="search">
-        </form>
         </div>
         <div id="add">
             <img id="plus" src="plus.svg" alt="plus"/>
@@ -81,26 +84,54 @@
             <div id="blok">
             <div class="cust_disp_4">
                 <div id="wypadki" class="typ">
+                    <div class="circle">
+                        <img class="imgcircle" src="wypadek.svg" alt="wypadek"/>
+                    </div>
+                    Wypadki
                 </div>
                 <div id="dziki" class="typ">
+                    <div class="circle">
+                        <img class="imgcircle" src="dzik.svg" alt="dziki"/>
+                    </div>
+                    Dziki
                 </div>
                 <div id="wandalizm" class="typ">
+                    <div class="circle">
+                        <img class="imgcircle" src="wandalizm.svg" alt="wandalizm"/>
+                    </div>
+                    Wandalizm
                 </div>
                 <div id="parkowanie" class="typ">
+                    <div class="circle">
+                        <img class="imgcircle" src="parkowanie.svg" alt="park"/>
+                    </div>
+                    Nieprawidłowe </br> parkowanie
                 </div>
             </div>
         </br>
             <div class="cust_disp_4">
                 <div id="drogowa" class="typ">
                     <div class="circle">
-                        <img id="droga" src="droga.svg" alt="droga"/>
+                        <img class="imgcircle" src="droga.svg" alt="droga"/>
                     </div>
+                    Niewłaściwa </br> struktura </br> drogowa
                 </div>
-                <div id="alkohol" class="typ">
+                <div id="alkohol" class="typ"><div class="circle">
+                        <img class="imgcircle" src="alkohol.svg" alt="alkohol"/>
+                    </div>
+                    Spożywanie </br> alkoholu </br> w miejscach </br> publicznych
                 </div>
                 <div id="niebiezpieczeństwo" class="typ">
+                    <div class="circle">
+                        <img class="imgcircle" src="niebezpieczenstwo.svg" alt="nieb"/>
+                    </div>
+                    Potencjalne</br> niebiezpieczeństwo
                 </div>
                 <div id="inne" class="typ">
+                    <div class="circle">
+                        <img class="imgcircle" src="inne.svg" alt="inne"/>
+                    </div>
+                    Inne
                 </div>
             </div>
             </div>
